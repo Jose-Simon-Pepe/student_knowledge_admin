@@ -1,0 +1,31 @@
+= General requeriment analysis
+
+Usar el sistema de notas actual mio, corregido, para que el usuario pueda crear notas con tags
+buscarlas de diferentes maneras, eliminarlas y modificarlas.
+
+== Tech to be used
+
+- Django -> Create rapid web app
+- Asciidoctor -> Create rapid and pretty documentation
+- Github Pages -> Publish system open documentation
+- Readme generator -> Any free readme generator
+- Pyclick -> to create a CLI
+
+== Use cases
+
+=== Shared
+
+User creates a note
+User edits an existing note
+User deletes an existing note
+User searchs note by topic
+User searchs note by note's title
+User searchs note by note content (by diffuse searching)
+
+=== Cli
+
+User appends a note to other (extends)
+User injects a note into other (using a REFFERENCE into injected one)
+User extract a note into a previously injected one (dereferencing)
+The user sorts the notes based on the number of injections.
+The user sorts the notes based on the number of times it was injected into other notes.

@@ -1,7 +1,11 @@
 = General requeriment analysis
 
-Usar el sistema de notas actual mio, corregido, para que el usuario pueda crear notas con tags
-buscarlas de diferentes maneras, eliminarlas y modificarlas.
+== Recursos
+
+...
+
+- Usar el sistema de notas actual mio, corregido, para que el usuario pueda crear notas con tags, buscarlas de diferentes maneras, eliminarlas y modificarlas.
+Usar la documentacion de zettelkasten para inspiracion sobre el modelo y logica de negocio.
 
 == Tech to be used
 
@@ -10,6 +14,12 @@ buscarlas de diferentes maneras, eliminarlas y modificarlas.
 - Github Pages -> Publish system open documentation
 - Readme generator -> Any free readme generator
 - Pyclick -> to create a CLI
+  https://github.com/pallets/click/
+- WSGI python server -> To create a localhost server for client-server model
+- Pandas -> Make notes analysis
+- Git -> Make notes following in the time
+    ¿May I build a minimalist version of git?
+- Docker -> To create a reproducible ejecutation of the app.
 
 == Use cases
 
@@ -24,8 +34,56 @@ User searchs note by note content (by diffuse searching)
 
 === Cli
 
+All WEB features, and
 User appends a note to other (extends)
 User injects a note into other (using a REFFERENCE into injected one)
 User extract a note into a previously injected one (dereferencing)
-The user sorts the notes based on the number of injections.
-The user sorts the notes based on the number of times it was injected into other notes.
+User sorts the notes based on the number of injections.
+User sorts the notes based on the number of times it was injected into other notes.
+User Check note change historial in the time
+
+== Decisiones generales
+
+Decido trabajar sin el uso de historias de usuario dada la simpleza de la logica.
+
+Los tipos de recursos gestionados son recursos individuales.
+
+Las preguntas del usuario intentaran obtener consejos o approaches para resolver problemas de gestion individual
+
+Dado el enfoque personal de la solcuion, se necesita adaptabilidad en la comunicacion y consultas 
+para entonces permitir una comunicacion apropiada y permitir la comunicacion fluida
+
+El tipo de servidor a utilizar inicialmente es WSGI:
+  1. Simplicidad de desarrollo
+  2. Necesidades de uso inicialmente satisfechas (no demasiadas demandas, no asincronia)
+
+== Atributos de calidad
+
+Usabilidad: El sistema sera utilizado por un publico general no necesariamente tecnico.
+
+== Requerimientos tecnicos
+
+=== Patrones de arquitectura recomendables para user histories y attributes
+
+Layered, Client Server
+
+=== Fw, lenguajes, plataformas y librerias a usar
+
+A usar: Django (por simplicidad de trabajo y velocidad de desarrollo inicial), su problema de
+rendimiento se compensa con la simpleza de los casos de uso.
+
+=== Servicios de terceros (hosting, dns, ddbb, cloud, etc)
+
+Persistencia en database, por empaquetamiento y optimizacion de los registros.
+
+== Alcances del MVP (0.1)
+
+=== SHARED
+
+User creates a note
+User edits an existing note
+User deletes an existing note
+User searchs note by topic
+User searchs note by note's title
+
+== Backlog

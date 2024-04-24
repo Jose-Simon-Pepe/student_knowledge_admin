@@ -1,16 +1,17 @@
 [tool.poetry]
-name = "project"
+name = "student_knowledge_admin"
 version = "0.1.0"
 description = "Some desc"
 authors = ["jose <jose.s.contacto@gmail.com>"]
 license = "Free"
 readme = "README.md"
-include = ['project']
+include = ['student_knowledge_admin']
 
 [tool.poetry.dependencies]
 python = "^3.11"
 pylint = "^3.1.0"
 click = "^8.1.7"
+django = "^5.0.4"
 
 [tool.poetry.group.dev.dependencies]
 pytest-watch = "^4.2.0"

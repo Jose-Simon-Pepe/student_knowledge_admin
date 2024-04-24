@@ -26,3 +26,6 @@ addopts = "--strict-markers"
 markers = [
     "integration: run integration testing",
     "unit: run unit testing"]
+
+[tool.poetry.scripts]
+adm = "manage:main"
